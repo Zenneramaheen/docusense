@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Hugging Face model cache (re-downloaded automatically)
+.cache/
+.hf_cache/
+
+# OS / editor
+.DS_Store
+*.swp
+.vscode/
+
+# Local env files (never commit secrets)
+.env

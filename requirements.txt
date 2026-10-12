@@ -1,0 +1,25 @@
+# DocuSense dependencies (pinned for reproducibility)
+#
+# IMPORTANT: install the CPU-only torch build FIRST, otherwise pip will pull
+# the ~2.5 GB CUDA wheel:
+#   pip install torch==2.5.1 --index-url https://download.pytorch.org/whl/cpu
+# then:
+#   pip install -r requirements.txt
+
+# --- API ---
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20   # FastAPI file-upload support
+
+# --- RAG stack (all local, no API keys) ---
+torch==2.5.1               # CPU build recommended (see note above)
+sentence-transformers==3.3.1  # all-MiniLM-L6-v2 embeddings
+transformers==4.48.3       # extractive QA pipeline (distilbert-squad)
+faiss-cpu==1.10.0          # vector similarity search
+numpy==1.26.4
+pypdf==5.1.0               # PDF text extraction
+
+# --- Dev / test ---
+pytest==8.3.4
+httpx==0.28.1              # FastAPI TestClient
+fpdf2==2.8.2               # generates the sample PDF + test PDFs
